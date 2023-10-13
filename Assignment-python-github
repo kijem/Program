@@ -1,0 +1,1042 @@
+{
+ "cells": [
+  {
+   "cell_type": "markdown",
+   "id": "9213c989",
+   "metadata": {},
+   "source": [
+    "## Assignment"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 1,
+   "id": "34a86692",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "Enter First Number34\n",
+      "Enter Second Number78\n",
+      "Enter Third Number90\n",
+      "90 is the largest number\n"
+     ]
+    }
+   ],
+   "source": [
+    "#Create a program that finds the largest of 3 numbers entered by the user\n",
+    "num1 = int(input(\"Enter First Number\"))\n",
+    "num2 = int(input(\"Enter Second Number\"))\n",
+    "num3 = int(input(\"Enter Third Number\"))\n",
+    "\n",
+    "if num1 > num2 and num1 > num3:\n",
+    "    print(num1, \"is the largest number\")\n",
+    "    \n",
+    "elif num2 > num1 and num2 > num3:\n",
+    "    print(num2, \"is the largest number\")\n",
+    "    \n",
+    "else:\n",
+    "    print(num3, \"is the largest number\")"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 2,
+   "id": "ce2b45a6",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "Enter at least four digits67854\n"
+     ]
+    },
+    {
+     "data": {
+      "text/plain": [
+       "'7854'"
+      ]
+     },
+     "execution_count": 2,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "#Create a function that extracts the last four digits from the input entered by the user\n",
+    "data = input(\"Enter at least four digits\")\n",
+    "\n",
+    "def last_four_digits(number):\n",
+    "    return number[-4:]\n",
+    "last_four_digits(data)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 6,
+   "id": "25383f43",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "Enter First Number45\n",
+      "Enter Second Number8\n",
+      "Enter operator eg +, -, *, //\n",
+      "45 / 8 = 5.625\n"
+     ]
+    }
+   ],
+   "source": [
+    "#3. Create a program that accepts 2 numbers and an operator eg. 5,6,+ then perform an operation based on what the user enters\n",
+    "#eg 5+6 if the user enters 2,8,* it should return 2*8 and show the answer\n",
+    "num1 = int(input(\"Enter First Number\"))\n",
+    "num2 = int(input(\"Enter Second Number\"))\n",
+    "operator = input(\"Enter operator eg +, -, *, /\")\n",
+    "\n",
+    "if operator == \"+\":\n",
+    "    print(num1, \"+\", num2, \"=\", num1 + num2)\n",
+    "    \n",
+    "elif operator == \"-\":\n",
+    "    print(num1, \"-\", num2, \"=\", num1 - num2)\n",
+    "    \n",
+    "elif operator == \"*\":\n",
+    "    print(num1, \"*\", num2, \"=\", num1 * num2)\n",
+    "    \n",
+    "elif operator == \"/\":\n",
+    "    print(num1, \"/\", num2, \"=\", num1 / num2)    \n",
+    "    \n",
+    "else:\n",
+    "    print(\"Invalid operator\")"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 8,
+   "id": "f06094c7",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "Enter score:  70\n",
+      "Grade B\n"
+     ]
+    }
+   ],
+   "source": [
+    "#4. Create a program that takes a score and shows the grade based on the score\n",
+    "score = int(input(\"Enter score:  \"))\n",
+    "\n",
+    "if score >= 90 and score <= 100:\n",
+    "    print(\"Grade A\")\n",
+    "    \n",
+    "elif score >= 70 and score <= 89:\n",
+    "    print(\"Grade B\")\n",
+    "    \n",
+    "elif score >= 50 and score <= 69:\n",
+    "    print(\"Grade C\") \n",
+    "    \n",
+    "elif score >= 30 and score <= 49:\n",
+    "    print(\"Grade D\")  \n",
+    "    \n",
+    "elif score >= 0 and score <= 29:\n",
+    "    print(\"Grade E\") \n",
+    "    \n",
+    "else:\n",
+    "    print(\"Invalid Score\")"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "d22050f8",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "#5. Create a guessing game. generate a number that is stored in a variable and let the user guess the number.\n",
+    "#If they guess correctly, tell them they are correct. If higher than the number,tell them it is higher.\n",
+    "#If lower, tell them their guess is lower.\n",
+    "# import random\n",
+    "# number = random.randint(1,20)\n",
+    "# guess = int(input(\"Guess between 1 to 20\"))\n",
+    "# if guess == number:\n",
+    "#     print(\"Correct\")\n",
+    "    \n",
+    "# elif guess < number:\n",
+    "#     print(\"guess higher\")\n",
+    "    \n",
+    "# else:\n",
+    "#     print(\"Guess lower\")\n",
+    "\n",
+    "import random\n",
+    "\n",
+    "number = random.randint(1,100)\n",
+    "guess = 0\n",
+    "while guess != number:\n",
+    "    guess = int(input(\"Enter Guess\"))\n",
+    "    if (guess < number):\n",
+    "        print(\"Guess Higher!\")\n",
+    "    elif (guess > number):\n",
+    "        print(\"Guess Lower!\")\n",
+    "    else:\n",
+    "        print(\"You won!\")\n",
+    "    "
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 1,
+   "id": "299f397b",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "1\n",
+      "2\n",
+      "Fizz\n",
+      "4\n",
+      "Buzz\n",
+      "Fizz\n",
+      "7\n",
+      "8\n",
+      "Fizz\n",
+      "Buzz\n",
+      "11\n",
+      "Fizz\n",
+      "13\n",
+      "14\n",
+      "FizzBuzz\n",
+      "16\n",
+      "17\n",
+      "Fizz\n",
+      "19\n",
+      "Buzz\n",
+      "Fizz\n",
+      "22\n",
+      "23\n",
+      "Fizz\n",
+      "Buzz\n",
+      "26\n",
+      "Fizz\n",
+      "28\n",
+      "29\n",
+      "FizzBuzz\n",
+      "31\n",
+      "32\n",
+      "Fizz\n",
+      "34\n",
+      "Buzz\n",
+      "Fizz\n",
+      "37\n",
+      "38\n",
+      "Fizz\n",
+      "Buzz\n",
+      "41\n",
+      "Fizz\n",
+      "43\n",
+      "44\n",
+      "FizzBuzz\n",
+      "46\n",
+      "47\n",
+      "Fizz\n",
+      "49\n",
+      "Buzz\n",
+      "Fizz\n",
+      "52\n",
+      "53\n",
+      "Fizz\n",
+      "Buzz\n",
+      "56\n",
+      "Fizz\n",
+      "58\n",
+      "59\n",
+      "FizzBuzz\n",
+      "61\n",
+      "62\n",
+      "Fizz\n",
+      "64\n",
+      "Buzz\n",
+      "Fizz\n",
+      "67\n",
+      "68\n",
+      "Fizz\n",
+      "Buzz\n",
+      "71\n",
+      "Fizz\n",
+      "73\n",
+      "74\n",
+      "FizzBuzz\n",
+      "76\n",
+      "77\n",
+      "Fizz\n",
+      "79\n",
+      "Buzz\n",
+      "Fizz\n",
+      "82\n",
+      "83\n",
+      "Fizz\n",
+      "Buzz\n",
+      "86\n",
+      "Fizz\n",
+      "88\n",
+      "89\n",
+      "FizzBuzz\n",
+      "91\n",
+      "92\n",
+      "Fizz\n",
+      "94\n",
+      "Buzz\n",
+      "Fizz\n",
+      "97\n",
+      "98\n",
+      "Fizz\n",
+      "Buzz\n"
+     ]
+    }
+   ],
+   "source": [
+    "# 6. Write a program that prints the integers from 1 to 100. But for multiples of three print \"Fizz\" instead of the number,\n",
+    "#and the multiples of five print \"Buzz\". for numbers that are multiples of both three and five print \"FizzBuzz\".\n",
+    "for i in range(1,101):\n",
+    "    if i % 3 == 0 and i % 5 == 0:\n",
+    "        print(\"FizzBuzz\")\n",
+    "        \n",
+    "    elif i % 3 == 0:\n",
+    "        print(\"Fizz\")\n",
+    "    elif i % 5 == 0:\n",
+    "        print(\"Buzz\")\n",
+    "        \n",
+    "    else:\n",
+    "        print(i)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 2,
+   "id": "c8887a99",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "range(0, 8)\n"
+     ]
+    }
+   ],
+   "source": [
+    "num = range(8)\n",
+    "print(num)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 5,
+   "id": "088b0ee4",
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "[1, 2, 3, 4, 5]"
+      ]
+     },
+     "execution_count": 5,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "# 7. Info = [1,1,1,1,2,2,3,3,3,3,4,5] bring out the unique values from the code\n",
+    "info = [1,1,1,1,2,2,3,3,3,3,4,5]\n",
+    "basket = []\n",
+    "for i in info:\n",
+    "    if i not in basket:\n",
+    "        basket.append(i)\n",
+    "        \n",
+    "basket        "
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 8,
+   "id": "bfba82fb",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "this\n",
+      "the\n",
+      "time\n",
+      "to\n",
+      "training\n"
+     ]
+    }
+   ],
+   "source": [
+    "#8. record = \"this is the time to attend python training\" bring out the words that start with \"t\"\n",
+    "record = \"this is the time to attend python training\"\n",
+    "for i in record.split():\n",
+    "    if i[0] == \"t\":\n",
+    "        print(i)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 12,
+   "id": "ebb99fee",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "python\n",
+      "is\n",
+      "hard\n",
+      "with\n",
+      "me\n"
+     ]
+    }
+   ],
+   "source": [
+    "#9. words = \"python is not hard. you agree with me right?\" print every word in this sentence above that has an even number \n",
+    "#of letters.\n",
+    "# we removed the . and ? for better calculation\n",
+    "words = \"python is not hard. you agree with me right?\"\n",
+    "words = words.replace(\".\", \"\").replace(\"?\", \"\")\n",
+    "for i in words.split():\n",
+    "    if len(i) % 2 == 0:\n",
+    "        print(i)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "dcf8fffb",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "#10. numbers = [1,2,3,4,5] write the code that will sum all the items inside numbers\n",
+    "numbers = [1,2,3,4,5]\n",
+    "result = 0\n",
+    "for i in numbers:\n",
+    "    result = result + i\n",
+    "    result"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 3,
+   "id": "c460d679",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "[1999, 1998, 1997]\n"
+     ]
+    }
+   ],
+   "source": [
+    "list1 = list(range(2000))\n",
+    "print(list1[-1:-4:-1])"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 8,
+   "id": "a8345c3d",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "Enter three values: 234\n",
+      "number of boys:  2\n",
+      "number of girls:  3\n",
+      "number of fish:  3\n"
+     ]
+    }
+   ],
+   "source": [
+    "x, y, z = input(\"Enter three values: \")\n",
+    "print(\"number of boys: \", x)\n",
+    "print(\"number of girls: \", y)\n",
+    "print(\"number of fish: \", y)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "8ffa96e8",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "n1 = int(input(\"Enter the number 1: \"))\n",
+    "n2 = int(input(\"Enter the number 2: \"))\n",
+    "n3 = int(input(\"Enter the number 3: \"))\n",
+    "\n",
+    "if n1 > n2 and n1 > n3:\n",
+    "    largest = n1\n",
+    "elif n2 > n1 and n2 > n3:\n",
+    "    largest = n2\n",
+    "else:\n",
+    "    largest = n3\n",
+    "    \n",
+    "print(\"Largest among {} {} and {} is {}\".format(n1,n2,n3,largest))"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 9,
+   "id": "e0411448",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "Enter first number: 23\n",
+      "Enter second number: 45\n",
+      "Enter third number: 67\n",
+      "The largest number between 23, 45, and 67 is 67.\n"
+     ]
+    }
+   ],
+   "source": [
+    "#Finding the largest number between the three numbers inputed by a user\n",
+    "#Question 1\n",
+    "num1 = int(input(\"Enter first value: \"))\n",
+    "num2 = int(input(\"Enter second value: \"))\n",
+    "num3 = int(input(\"Enter third value: \"))\n",
+    "\n",
+    "if num1 > num2 and num1 > num3:\n",
+    "    largest = num1\n",
+    "elif num2 > num1 and num2 > num3:\n",
+    "        largest = num2\n",
+    "else:\n",
+    "    largest = num3\n",
+    "    \n",
+    "print(f\"The largest number between {num1}, {num2}, and {num3} is {largest}.\")    "
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 10,
+   "id": "6a5b2d78",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "Enter Values: 12345\n",
+      "5432\n"
+     ]
+    }
+   ],
+   "source": [
+    "#Creating a function that extracts the last four digits from the input entered by the user\n",
+    "num = input(\"Enter Values: \")\n",
+    "num = num[-1:-5:-1]\n",
+    "print(num)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 28,
+   "id": "5e9c4706",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "Enter max of 10 numbers: 23456\n"
+     ]
+    },
+    {
+     "data": {
+      "text/plain": [
+       "'3456'"
+      ]
+     },
+     "execution_count": 28,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "#2.Creating a function that extracts the last four digits from the input entered by the user\n",
+    "data = input(\"Enter max of 10 numbers: \")\n",
+    "def last_four_digits(number):\n",
+    "    return number[-4:]\n",
+    "last_four_digits(data)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "229a9a99",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "#Create a program that accept 2 numbers as an operator eg 5,6,+ then perform an operation based on what the user enters\n",
+    "#eg 5+5, 2,8,* shpuld come as 2*8 and show the answer\n",
+    "num1 = int(input(\"Enter the first number\"))\n",
+    "num2 = int(input(\"Enter the second number\"))\n",
+    "operator = input(\"Enter operator eg +, -, *, /\")\n",
+    "if operator == \"+\":\n",
+    "    print(num1, \"+\", num2, \"=\", num1 + num2)\n",
+    "elif    "
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 11,
+   "id": "122da63c",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "Guess a correct value: 67\n",
+      "Incorrect\n"
+     ]
+    }
+   ],
+   "source": [
+    "num = int(input(\"Guess a correct value: \"))\n",
+    "list1 = [23,67,89,4,5,6,12,4,56,88,90,54,32,61,50,10,9,11,31,21,17]\n",
+    "if num != list1:\n",
+    "    print(\"Incorrect\")\n",
+    "else:\n",
+    "    print(\"Correct\")\n"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 12,
+   "id": "467bfd10",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "Enter Guess45\n",
+      "Guess Higher!\n",
+      "Enter Guess80\n",
+      "Guess Lower!\n",
+      "Enter Guess79\n",
+      "Guess Lower!\n",
+      "Enter Guess70\n",
+      "Guess Higher!\n",
+      "Enter Guess75\n",
+      "Guess Higher!\n",
+      "Enter Guess76\n",
+      "Guess Higher!\n",
+      "Enter Guess77\n",
+      "You won!\n"
+     ]
+    }
+   ],
+   "source": [
+    "#Random module helps us generate random number\n",
+    "import random\n",
+    "\n",
+    "number = random.randint(1,100)\n",
+    "guess = 0\n",
+    "while guess != number:\n",
+    "    guess = int(input(\"Enter Guess\"))\n",
+    "    if (guess < number):\n",
+    "        print(\"Guess Higher!\")\n",
+    "    elif (guess > number):\n",
+    "        print(\"Guess Lower!\")\n",
+    "    else:\n",
+    "        print(\"You won!\")"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "629e7674",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "import random\n",
+    "\n",
+    "number = random.randint(1,100)\n",
+    "guess = 0\n",
+    "while guess != number:\n",
+    "    guess = int(input(\"Enter Guess\"))\n",
+    "    if (guess < number):\n",
+    "        print(\"Guess Higher!\")\n",
+    "    elif (guess > number):\n",
+    "        print(\"Guess Lower!\")\n",
+    "    else:\n",
+    "        print(\"You won!\")"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 13,
+   "id": "adea994c",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "Enter Score50\n",
+      "Grade D\n"
+     ]
+    }
+   ],
+   "source": [
+    "score = int(input(\"Enter Score\"))\n",
+    "if score >= 90:\n",
+    "    print(\"Grade A\")\n",
+    "elif score >= 80:\n",
+    "    print(\"Grade B\")\n",
+    "elif score >= 60:\n",
+    "    print(\"Grade C\")\n",
+    "elif score >= 50:\n",
+    "    print(\"Grade D\")\n",
+    "elif score >= 40:\n",
+    "    print(\"Grade E\") \n",
+    "else:\n",
+    "    print(\"Grade F\")\n"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 14,
+   "id": "f4bc4109",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "{1, 2, 3, 4, 5}\n"
+     ]
+    }
+   ],
+   "source": [
+    "info = [1,1,1,1,2,2,3,3,3,3,4,5]\n",
+    "info = set([1,1,1,1,2,2,3,3,3,3,4,5])\n",
+    "print(info)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 29,
+   "id": "a706325f",
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "'this'"
+      ]
+     },
+     "execution_count": 29,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "record = \"this is the time to attend python training\"\n",
+    "record[0:4]"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 16,
+   "id": "46443bb3",
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "'the'"
+      ]
+     },
+     "execution_count": 16,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "record = \"this is the time to attend python training\"\n",
+    "record[8:11]"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 17,
+   "id": "917de956",
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "'time'"
+      ]
+     },
+     "execution_count": 17,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "record = \"this is the time to attend python training\"\n",
+    "record[12:16]"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 18,
+   "id": "b20e4173",
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "'training'"
+      ]
+     },
+     "execution_count": 18,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "record = \"this is the time to attend python training\"\n",
+    "record[34::]"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 20,
+   "id": "58cc936e",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "words = \"python is not hard. you agree with me right?\""
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 21,
+   "id": "749deb1d",
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "'python'"
+      ]
+     },
+     "execution_count": 21,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "words[0:6]"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 22,
+   "id": "4141382a",
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "'is'"
+      ]
+     },
+     "execution_count": 22,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "words[7:9]"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 23,
+   "id": "1ee1421f",
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "'hard'"
+      ]
+     },
+     "execution_count": 23,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "words[14:18]"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 24,
+   "id": "f1f89939",
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "'with'"
+      ]
+     },
+     "execution_count": 24,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "words[30:34]"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 25,
+   "id": "d37353e8",
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "' me'"
+      ]
+     },
+     "execution_count": 25,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "words[34:37]"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 26,
+   "id": "0d0c3c82",
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "15"
+      ]
+     },
+     "execution_count": 26,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "numbers = [1,2,3,4,5]\n",
+    "sum(numbers)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 30,
+   "id": "841e0b44",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "words = \"python is not hard. you agree with me right?\"\n",
+    "#To remove the . and ?\n",
+    "words = words.replace(\".\", \"\"),replace(\"?\", \"\")\n",
+    "for i in words.split():\n",
+    "    if len(i) % 2 == 0:\n",
+    "        print(i)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 33,
+   "id": "6da1f94d",
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "15"
+      ]
+     },
+     "execution_count": 33,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "#result is 0, 0+1=1, 1+2=3, 3+3=6, 6+4=10, 10+5=15. these steps are very important\n",
+    "numbers = [1,2,3,4,5]\n",
+    "result = 0\n",
+    "for i in numbers:\n",
+    "    result = result + i\n",
+    "result    "
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "4f439e08",
+   "metadata": {},
+   "outputs": [],
+   "source": []
+  }
+ ],
+ "metadata": {
+  "kernelspec": {
+   "display_name": "Python 3 (ipykernel)",
+   "language": "python",
+   "name": "python3"
+  },
+  "language_info": {
+   "codemirror_mode": {
+    "name": "ipython",
+    "version": 3
+   },
+   "file_extension": ".py",
+   "mimetype": "text/x-python",
+   "name": "python",
+   "nbconvert_exporter": "python",
+   "pygments_lexer": "ipython3",
+   "version": "3.11.4"
+  }
+ },
+ "nbformat": 4,
+ "nbformat_minor": 5
+}
